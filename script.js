@@ -34,6 +34,6 @@ function startNewGame() {
 
 function showScreen(index) {
   SCREENS_NODES.forEach((screen, i)=>{
-    screen.classlist.toggle('visible', i === index);
+    screen.classList.toggle('visible', i === index);
   })
 }
