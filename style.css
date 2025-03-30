@@ -55,3 +55,26 @@ body {
 .answer {
   width: 100%;
 }
+
+.answer.active {
+  background-color: #ffA500;
+}
+
+.answer.right {
+  background-color: #008000;
+}
+
+.answer.active,
+.answer.right {
+animation: blink 1s infinite ease-out;
+border-color: #fff;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
