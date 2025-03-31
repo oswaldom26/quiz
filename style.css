@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-  background-color: rgba(0,0,0,0.2);
+  background: url('https://kartinki.pics/pics/uploads/posts/2022-08/1661166269_1-kartinkin-net-p-fon-dlya-kviza-krasivo-1.jpg');
   font-family: 'Poppins', sans-serif;
 }
 
@@ -30,18 +30,18 @@ body {
 }
 
 .button {
-  padding: 10px 20 px;
+  padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: #3498db;
-  color: #fff;
+  background-color: #FFFF00;
+  color: #000;
   transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #2980b9;
+  background-color: #FBB117;
 }
 
 .answer-list {
@@ -61,7 +61,7 @@ body {
 }
 
 .answer.right {
-  background-color: #008000;
+  background-color: #00FF00;
 }
 
 .answer.active,
