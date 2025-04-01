@@ -26,9 +26,6 @@ START_GAME_BUTTONS.forEach(button => {
 })
 
 function startNewGame() {
-  // переход на экран с викториной
-  // переход к 1 вопросу
-  // обнуление очков
   showScreen(1);
   setActiveQuestion(0);
   updateMoney(0);
