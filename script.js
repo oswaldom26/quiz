@@ -1,13 +1,13 @@
 const QUESTIONS = [
   {
-    text: 'Какой фрукт считается источником витамина C?',
-    answers: ['Банан', 'Апельсин', 'Груша', 'Арбуз'],
+    text: 'Какого числа отмечают День смеха?',
+    answers: ['1 августа', '1 апреля', '12 апреля', '12 июня'],
     rightIndex: 1,   
   },
   {
-    text: 'Какое из этих чисел является простым?',
-    answers: ['37', '25', '42', '50'],
-    rightIndex: 0,
+    text: 'Какого числа у Туи День рождения?',
+    answers: ['26 апреля', '2 апреля', '1 апреля', '1 марта'],
+    rightIndex: 2,
   },
 ];
 
@@ -99,7 +99,7 @@ async function handleAnswerClick(answerNode, question) {
     setActiveQuestion(activeQuestionIndex + 1);
   }
 
-  updateMoney(money + 5000);
+  updateMoney(money + 500000);
   
 }
 
