@@ -26,6 +26,9 @@ START_GAME_BUTTONS.forEach(button => {
 })
 
 function startNewGame() {
+  // переход на экран с викториной
+  // переход к 1 вопросу
+  // обнуление очков
   showScreen(1);
   setActiveQuestion(0);
   updateMoney(0);
@@ -48,6 +51,8 @@ function setActiveQuestion(index) {
   activeQuestionIndex = index;
 
   const QUESTION_NODE = document.querySelector('.question');
+  if (!QUESTION_NODE) return;
+
   const activeQuestion = QUESTIONS[index];
 
   QUESTION_NODE.textContent = activeQuestion.text;
@@ -60,11 +65,11 @@ function setActiveQuestion(index) {
 function setupAnswers(question) {
   const letters = ['A', 'B', 'C', 'D'];
   ANSWERS_NODES.forEach((answerNode, index) => {
-  answerNode.textContent = `${letters[index]}. ${question.answers[index]}`;
+    answerNode.textContent = `${letters[index]}. ${question.answers[index]}`;
 
-  answerNode.addEventListener('click', () => {
-    handleAnswerClick(answerNode, question);
-  })
+    answerNode.addEventListener('click', () => {
+      handleAnswerClick(answerNode, question);
+    })
   })
 }
 
@@ -79,9 +84,9 @@ async function handleAnswerClick(answerNode, question) {
 
   const rightAnswerNode = ANSWERS_NODES[question.rightIndex];
 
-  const isRightAnswer = rightAnswerNode.textContent === answerNode.textContent;
-
   await highlightAnswer(rightAnswerNode, 'right');
+
+  const isRightAnswer = question.rightIndex === ANSWERS_NODES.indexOf(answerNode);
 
   if (!isRightAnswer) {
     showScreen(2);
@@ -96,22 +101,16 @@ async function handleAnswerClick(answerNode, question) {
     setActiveQuestion(activeQuestionIndex + 1);
   }
 
-  updateMoney(money + 500000);
+  updateMoney(money + PRIZE_FOR_RIGHT_ANSWER);
   
 }
 
 async function highlightAnswer(answerNode, type) {
   answerNode.classList.add(type);
 
-  await timeout(1500);
+  await timeout(HIGHLIGHT_TIMEOUT_MS);
 
-  clearClassNamesFromQuestion(answerNode);
-}
-
-function clearClassNamesFromQuestion(answerNode){
-  ['active', 'right'].forEach(className => {
-    answerNode.classList.remove(className)
-  })
+  answerNode.classList.remove('active', 'right');
 }
 
 function timeout(ms) {
