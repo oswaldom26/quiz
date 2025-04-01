@@ -15,7 +15,7 @@ const SCREENS_NODES = document.querySelectorAll('.screen');
 const ANSWERS_NODES = document.querySelectorAll('.answer');
 const START_GAME_BUTTONS = document.querySelectorAll('.start-game');
 const MONEY_NODES = document.querySelectorAll('.money');
-const PRIZE_FOR_RIGHT_ANSWER = 5000;
+const PRIZE_FOR_RIGHT_ANSWER = 500000;
 const HIGHLIGHT_TIMEOUT_MS = 1500;
 
 let activeQuestionIndex = 0;
